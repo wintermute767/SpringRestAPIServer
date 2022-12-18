@@ -18,7 +18,11 @@ public class PersonServiceV1Impl implements PersonService <PersonV1> {
 
     @Override
     public PersonV1 read(Integer id) {
-        return (PersonV1)  personRepository.getById(id);
+        Object person = personRepository.getById(id);
+        if (person == null) {
+            return null;
+        }
+        return (PersonV1)  person;
     }
 
     @Override

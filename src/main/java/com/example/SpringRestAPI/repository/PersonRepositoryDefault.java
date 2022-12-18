@@ -25,9 +25,11 @@ public class PersonRepositoryDefault<T extends PersonV1> implements ObjectReposi
 
     @Override
     public T getById(Integer ID) {
+
         if (ID < repository.size()) {
             return repository.get(ID);
         }
+
         return null;
     }
 

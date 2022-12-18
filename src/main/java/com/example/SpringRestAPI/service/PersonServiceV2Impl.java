@@ -19,6 +19,9 @@ public class PersonServiceV2Impl implements PersonService <PersonV2>{
     @Override
     public PersonV2 read(Integer id) {
         Object person = personRepository.getById(id);
+        if (person == null) {
+            return null;
+        }
         if (person.getClass()== PersonV1.class){
             PersonV2 newPerson = new PersonV2((PersonV1) person);
             return newPerson;
