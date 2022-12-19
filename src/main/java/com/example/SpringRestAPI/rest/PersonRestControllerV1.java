@@ -49,7 +49,6 @@ public class PersonRestControllerV1 {
 
     @RequestMapping(value = "{id}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<PersonV1> updatePerson(@PathVariable("id") Integer id, @Validated @RequestBody PersonV1 person) {
-        System.out.println(person);
         HttpHeaders headers = new HttpHeaders();
 
         if (person == null) {
